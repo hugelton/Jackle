@@ -34,6 +34,7 @@ jobs:
           emscripten-version: latest
       - run: cmake --version
       - run: npm run build:wasm --workspace
+        working-directory: samples/JackleSine
       - uses: actions/upload-artifact@v4
         with:
           name: wasm-artifacts
@@ -41,24 +42,3 @@ jobs:
             samples/JackleSine/web/jackle-dsp.js
             samples/JackleSine/web/jackle-dsp.wasm
             samples/JackleSine/gui/**
-            samples/JackleSine/index.html
-          if-no-files-found: error
-
-  pages-preview:
-    runs-on: macos-latest
-    needs: [build-wasm]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - uses: emscripten-actions/setup-emscripten@v4
-        with:
-          emscripten-version: latest
-      - run: npm run build:wasm --workspace
-      - uses: actions/upload-artifact@v4
-        with:
-          name: pages-build
-          path: pages/
