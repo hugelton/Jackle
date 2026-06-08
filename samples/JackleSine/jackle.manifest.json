@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "jackle-sine",
+  "name": "JackleSine",
+  "manufacturer": "Hugelton Instruments",
+  "manufacturer_id": "HUGL",
+  "plugin_id": "JACK",
+  "bundle_id": "com.hugelton.jackle-sine",
+  "version": "0.1.0",
+  "type": "instrument",
+  "audio": {
+    "inputs": 0,
+    "outputs": 2
+  },
+  "midi": {
+    "input": false,
+    "output": false
+  },
+  "gui": {
+    "entry": "gui/index.html",
+    "width": 640,
+    "height": 360
+  },
+  "dsp": {
+    "header": "dsp/PluginDSP.h",
+    "source": "dsp/PluginDSP.cpp",
+    "class_name": "PluginDSP",
+    "sample": "oscillator"
+  },
+  "vst3": {
+    "processor_cid": "85980DE03F8F4C7D3D36281333880898",
+    "controller_cid": "4472BADC338E9B9A5D7A75D58C630828"
+  },
+  "params": [
+    {
+      "id": "frequency",
+      "param_id": 800267265,
+      "name": "Frequency",
+      "type": "float",
+      "min": 20,
+      "max": 2000,
+      "default": 440,
+      "unit": "Hz",
+      "sample_role": "frequency",
+      "cpp_id": "frequency",
+      "step": 1
+    },
+    {
+      "id": "level",
+      "param_id": 2610554845,
+      "name": "Level",
+      "type": "float",
+      "min": 0,
+      "max": 1,
+      "default": 0.25,
+      "sample_role": "level",
+      "cpp_id": "level",
+      "step": 0.01
+    }
+  ]
+}

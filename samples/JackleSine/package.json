@@ -1,0 +1,14 @@
+{
+  "name": "jackle-sine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ./scripts/dev.mjs",
+    "build:web": "node ./scripts/build-web.mjs",
+    "build:wasm": "node ./scripts/build-wasm.mjs",
+    "export:vst3-mac": "node ./scripts/export-vst3-mac.mjs",
+    "build:vst3-mac": "node ./scripts/build-vst3-mac.mjs",
+    "clean": "node ./scripts/clean.mjs"
+  }
+}
