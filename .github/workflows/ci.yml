@@ -35,11 +35,16 @@ jobs:
           cd /tmp/emsdk
           ./emsdk install latest
           ./emsdk activate latest
-          echo "/tmp/emsdk" >> $GITHUB_PATH
-          echo "EMSDK=/tmp/emsdk" >> $GITHUB_ENV
-      - run: cmake --version
+      - name: Verify emscripten
+        run: |
+          source /tmp/emsdk/emsdk_env.sh
+          emcc --version
+          emcmake --version
       - run: npm run build:wasm
         working-directory: samples/JackleSine
+        env:
+          EMSDK: /tmp/emsdk
+          PATH: /tmp/emsdk:/tmp/emsdk/upstream/emscripten:$PATH
       - uses: actions/upload-artifact@v4
         with:
           name: wasm-artifacts
@@ -64,10 +69,11 @@ jobs:
           cd /tmp/emsdk
           ./emsdk install latest
           ./emsdk activate latest
-          echo "/tmp/emsdk" >> $GITHUB_PATH
-          echo "EMSDK=/tmp/emsdk" >> $GITHUB_ENV
       - run: npm run build:wasm
         working-directory: samples/JackleSine
+        env:
+          EMSDK: /tmp/emsdk
+          PATH: /tmp/emsdk:/tmp/emsdk/upstream/emscripten:$PATH
       - run: node ./scripts/export-pages.js
         working-directory: samples/JackleSine
       - uses: actions/upload-artifact@v4
