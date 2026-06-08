@@ -1,0 +1,2 @@
+/tmp/emsdk/upstream/emscripten/emar qc libjackle_dsp.a CMakeFiles/jackle_dsp.dir/dsp/PluginDSP.cpp.o
+/tmp/emsdk/upstream/emscripten/emranlib libjackle_dsp.a

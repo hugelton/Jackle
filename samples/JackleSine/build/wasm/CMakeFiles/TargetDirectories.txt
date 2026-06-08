@@ -1,0 +1,6 @@
+/home/kurogedelic/Jackle/samples/JackleSine/build/wasm/CMakeFiles/jackle_dsp.dir
+/home/kurogedelic/Jackle/samples/JackleSine/build/wasm/CMakeFiles/edit_cache.dir
+/home/kurogedelic/Jackle/samples/JackleSine/build/wasm/CMakeFiles/rebuild_cache.dir
+/home/kurogedelic/Jackle/samples/JackleSine/build/wasm/web/CMakeFiles/jackle-dsp.dir
+/home/kurogedelic/Jackle/samples/JackleSine/build/wasm/web/CMakeFiles/edit_cache.dir
+/home/kurogedelic/Jackle/samples/JackleSine/build/wasm/web/CMakeFiles/rebuild_cache.dir
