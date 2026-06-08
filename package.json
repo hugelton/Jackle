@@ -1,0 +1,24 @@
+{
+  "name": "@hugelton/jackle",
+  "version": "0.1.0",
+  "description": "Minimal web-first audio plugin toolchain for plain C++ DSP and plain HTML/CSS/JS GUI.",
+  "type": "module",
+  "bin": {
+    "jackle": "./bin/jackle.mjs"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test:generator": "node ./test/recovery.mjs",
+    "smoke": "npm run test:generator",
+    "clean": "rm -rf tmp-smoke"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
