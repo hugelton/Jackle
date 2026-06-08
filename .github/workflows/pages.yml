@@ -24,12 +24,11 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - uses: emscripten-actions/setup-emscripten@v4
-        with:
-          emscripten-version: latest
       - run: npm run smoke
-      - run: npm run build:wasm --workspace
+      - run: npm run build:wasm
+        working-directory: samples/JackleSine
       - run: node ./scripts/export-pages.js
+        working-directory: samples/JackleSine
       - uses: actions/upload-pages-artifact@v4
         with:
           path: pages/
